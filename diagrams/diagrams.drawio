@@ -249,7 +249,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="Patient" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#60a917;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2D7600;rounded=1;fontColor=#ffffff;labelBackgroundColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="1100" width="220" height="182" as="geometry"/>
+                    <mxGeometry x="500" y="1100" width="220" height="208" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="+id: UUID [PK] [FK Auth.Users.id]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="72" vertex="1">
                     <mxGeometry y="26" width="220" height="26" as="geometry"/>
@@ -263,11 +263,14 @@
                 <mxCell id="128" value="+isHighTarget: BOOL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="72" vertex="1">
                     <mxGeometry y="104" width="220" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="76" value="+created_at: DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="72" vertex="1">
+                <mxCell id="HorRqpWChOLO1ld5nPmD-133" value="+backup_authorization: JSONB" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="72">
                     <mxGeometry y="130" width="220" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="77" value="+updated_at: DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="72" vertex="1">
+                <mxCell id="76" value="+created_at: DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="72" vertex="1">
                     <mxGeometry y="156" width="220" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="+updated_at: DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="72" vertex="1">
+                    <mxGeometry y="182" width="220" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" value="Vaccine" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#60a917;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontColor=#ffffff;strokeColor=#2D7600;rounded=1;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry x="840" y="1360" width="335" height="208" as="geometry"/>
@@ -380,7 +383,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="-A7kIYrxt8uHz5kUWMrr" name="sequences">
-        <mxGraphModel dx="1531" dy="931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="509" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -583,6 +586,17 @@
                     <mxGeometry x="0.2362" y="3" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="yl1k7dUELMDGtVnRb1J-" name="Use case">
+        <mxGraphModel dx="932" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="HA4aQpbDbCAzbk4XwSZr-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="320" width="380" height="940" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
