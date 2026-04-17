@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="oGPY51usEzS51FtTaPO0" name="Database">
-        <mxGraphModel dx="1787" dy="1087" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1348" dy="1087" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -273,7 +273,7 @@
                     <mxGeometry y="182" width="220" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" value="Vaccine" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#60a917;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontColor=#ffffff;strokeColor=#2D7600;rounded=1;labelBackgroundColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="840" y="1360" width="335" height="208" as="geometry"/>
+                    <mxGeometry x="840" y="1360" width="335" height="234" as="geometry"/>
                 </mxCell>
                 <mxCell id="79" value="+id: UUID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="78" vertex="1">
                     <mxGeometry y="26" width="335" height="26" as="geometry"/>
@@ -296,8 +296,11 @@
                 <mxCell id="85" value="+hospital_id: UUID [FK: Medical_Personel.Hospital" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="78" vertex="1">
                     <mxGeometry y="182" width="335" height="26" as="geometry"/>
                 </mxCell>
+                <mxCell id="VL0DuF3i-5yyiK628-B8-128" value="+place_administerd: LOCATION" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="78">
+                    <mxGeometry y="208" width="335" height="26" as="geometry"/>
+                </mxCell>
                 <mxCell id="89" value="Diagnose" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#008a00;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontColor=#ffffff;strokeColor=#005700;rounded=1;labelBackgroundColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="445" y="1340" width="330" height="286" as="geometry"/>
+                    <mxGeometry x="445" y="1340" width="330" height="312" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" value="+id: UUID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="89" vertex="1">
                     <mxGeometry y="26" width="330" height="26" as="geometry"/>
@@ -326,11 +329,14 @@
                 <mxCell id="95" value="+hospital_id: UUID [FK--&amp;gt; Medical_Personel.Hospital.id]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="89" vertex="1">
                     <mxGeometry y="234" width="330" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="96" value="+date: DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="89" vertex="1">
+                <mxCell id="VL0DuF3i-5yyiK628-B8-129" value="+place_administered: LOCATION" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="89">
                     <mxGeometry y="260" width="330" height="26" as="geometry"/>
                 </mxCell>
+                <mxCell id="96" value="+date: DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="89" vertex="1">
+                    <mxGeometry y="286" width="330" height="26" as="geometry"/>
+                </mxCell>
                 <mxCell id="100" value="Prescription" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#60a917;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#2D7600;fontColor=#ffffff;rounded=1;labelBackgroundColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="30" y="1350" width="370" height="156" as="geometry"/>
+                    <mxGeometry x="30" y="1350" width="370" height="182" as="geometry"/>
                 </mxCell>
                 <mxCell id="101" value="+id: UUID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="100" vertex="1">
                     <mxGeometry y="26" width="370" height="26" as="geometry"/>
@@ -344,8 +350,11 @@
                 <mxCell id="104" value="+name: srtring" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="100" vertex="1">
                     <mxGeometry y="104" width="370" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="+hospital_id: STRING [FK--&amp;gt;Medical_Personel.Hospital.id]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="100" vertex="1">
+                <mxCell id="VL0DuF3i-5yyiK628-B8-130" value="+hospital_id: STRING [FK--&amp;gt;Medical_Personel.Hospital.id]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="100">
                     <mxGeometry y="130" width="370" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="place_administered: LOCATION" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontStyle=1" parent="100" vertex="1">
+                    <mxGeometry y="156" width="370" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="108" value="" style="endArrow=none;html=1;shadow=1;labelBackgroundColor=none;fontStyle=1" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -383,7 +392,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="-A7kIYrxt8uHz5kUWMrr" name="sequences">
-        <mxGraphModel dx="509" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="809" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -591,12 +600,21 @@
         </mxGraphModel>
     </diagram>
     <diagram id="yl1k7dUELMDGtVnRb1J-" name="Use case">
-        <mxGraphModel dx="932" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="703" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="HA4aQpbDbCAzbk4XwSZr-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="270" y="320" width="380" height="940" as="geometry"/>
+                </mxCell>
+                <mxCell id="DU323jHbVbfkbWjdcuCO-1" value="National_admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="350" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="DU323jHbVbfkbWjdcuCO-2" value="Regional_admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="530" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="DU323jHbVbfkbWjdcuCO-3" value="Hospital_admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="660" width="30" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
