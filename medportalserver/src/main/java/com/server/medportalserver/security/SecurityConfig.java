@@ -13,13 +13,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
+                .csrf(csrf -> csrf.disable())
                 .formLogin(
                         httpForm -> {
                             httpForm.loginPage("/login").permitAll();
                         })
                 .authorizeHttpRequests(
                         auth -> {
-                            auth.requestMatchers("/login", "/register_supreme_admin").permitAll();
+                            auth.requestMatchers("/login", "/register_supreme_admin", "/sign-up-supreme-admin").permitAll();
                             auth.requestMatchers("/admin/**").hasRole("ADMIN");
                             auth.requestMatchers("/doctor/**").hasRole("DOCTOR");
                             auth.requestMatchers("/nurse/**").hasRole("NURSE");
