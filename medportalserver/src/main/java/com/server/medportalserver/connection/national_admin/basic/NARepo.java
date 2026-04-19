@@ -1,4 +1,4 @@
-package com.server.medportalserver.connection.national_admin;
+package com.server.medportalserver.connection.national_admin.basic;
 
 import java.util.UUID;
 

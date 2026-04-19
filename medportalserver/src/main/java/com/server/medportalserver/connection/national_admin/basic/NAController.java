@@ -1,4 +1,4 @@
-package com.server.medportalserver.connection.national_admin;
+package com.server.medportalserver.connection.national_admin.basic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

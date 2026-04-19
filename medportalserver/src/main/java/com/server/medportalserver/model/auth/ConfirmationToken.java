@@ -24,6 +24,9 @@ public class ConfirmationToken {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Column(name = "token_type", nullable = false)
+    private String tokenType;
+
     @Column(nullable = false)
     private String token;
 
@@ -33,4 +36,7 @@ public class ConfirmationToken {
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "is_used", columnDefinition = "boolean default false")
+    private boolean is_used;
 }
