@@ -33,6 +33,9 @@ spring:
                     auth: true
                     starttls:
                         enable: true
+                    timeout: 5000
+                    connectiontimeout: 5000
+                    writetimeout: 5000
 
 registration:
     secret: ${REGISTRATION_SECRET}
