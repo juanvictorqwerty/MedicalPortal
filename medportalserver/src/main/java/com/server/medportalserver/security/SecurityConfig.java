@@ -47,11 +47,17 @@ public class SecurityConfig {
 
                 String path = request.getRequestURI();
 
-                if (path.equals("/sign-up-supreme-admin")) {
-                    String headerValue = request.getHeader(adminHeaderName);
-                    if (adminHeaderValue == null || !adminHeaderValue.equals(headerValue)) {
+                if (path.equals("/sign-up-supreme-admin") || path.equals("/confirm-admin")) {
+                    String adminHeader = request.getHeader(adminHeaderName);
+                    String registrationHeader = request.getHeader("X-Registration-Secret");
+
+                    boolean adminValid = adminHeaderValue != null && adminHeaderValue.equals(adminHeader);
+                    boolean registrationValid = registrationSecret != null && registrationSecret.equals(registrationHeader);
+
+                    if (!adminValid || !registrationValid) {
                         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                        response.getWriter().write("Missing or invalid admin access header.");
+                        response.setContentType("application/json");
+                        response.getWriter().write("{\"error\": \"Missing or invalid security headers. Please ensure both 'X-Registration-Secret' and '" + adminHeaderName + "' are provided correctly.\"}");
                         return;
                     }
                 }
@@ -73,15 +79,7 @@ public class SecurityConfig {
                         })
                 .authorizeHttpRequests(
                         auth -> {
-                            auth.requestMatchers("/login", "/resend-token").permitAll();
-
-                            auth.requestMatchers("/sign-up-supreme-admin", "/confirm-admin")
-                                    .access((authentication, context) -> {
-                                        String clientSecret = context.getRequest().getHeader("X-Registration-Secret");
-                                        boolean granted = registrationSecret != null
-                                                && registrationSecret.equals(clientSecret);
-                                        return new AuthorizationDecision(granted);
-                                    });
+                            auth.requestMatchers("/login", "/resend-token", "/sign-up-supreme-admin", "/confirm-admin").permitAll();
 
                             auth.requestMatchers("/admin/**").hasRole("ADMIN");
                             auth.requestMatchers("/doctor/**").hasRole("DOCTOR");
