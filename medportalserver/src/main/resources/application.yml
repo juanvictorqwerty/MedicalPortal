@@ -4,8 +4,8 @@ spring:
 
     datasource:
         url: jdbc:postgresql://localhost:5433/postgres
-        username: admin
-        password: admin123
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
 
     jpa:
         hibernate:
@@ -18,15 +18,15 @@ spring:
 
     security:
         user:
-            name: admin
-            password: 12345678
+            name: ${ADMIN_USER}
+            password: ${ADMIN_PASS}
             roles: [ "ADMIN" ]
 
     mail:
         host: smtp.gmail.com
         port: 587
-        username: juanvictorqwerty@gmail.com
-        password: xxob syai satp ihyw
+        username: ${MAIL_USER}
+        password: ${MAIL_PASS}
         properties:
             mail:
                 smtp:
