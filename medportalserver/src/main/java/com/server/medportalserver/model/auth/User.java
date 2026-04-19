@@ -33,9 +33,12 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false, columnDefinition = "boolean default false")
     private boolean isVerified;
 
     private LocalDate birthday;
+
+    private String role;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
