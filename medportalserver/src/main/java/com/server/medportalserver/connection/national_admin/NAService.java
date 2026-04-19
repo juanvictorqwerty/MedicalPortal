@@ -19,7 +19,6 @@ public class NAService {
                 .name(request.getName())
                 .phone(request.getPhone())
                 .password(request.getPassword())
-                .isVerified(true)
                 .build();
 
         try {
