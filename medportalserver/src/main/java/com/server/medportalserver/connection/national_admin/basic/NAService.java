@@ -6,15 +6,18 @@ import com.server.medportalserver.model.auth.ConfirmationToken;
 import java.time.LocalDateTime;
 import com.server.medportalserver.connection._common.GenerateRandomCode;
 import com.server.medportalserver.connection.national_admin.confirm.ConfirmationTokenRepo;
+import com.server.medportalserver.connection._common.email.EmailService;
 
 @Service
 public class NAService {
     private final NARepo naRepo;
     private final ConfirmationTokenRepo confirmationTokenRepo;
+    private final EmailService emailService;
 
-    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo) {
+    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo, EmailService emailService) {
         this.naRepo = naRepo;
         this.confirmationTokenRepo = confirmationTokenRepo;
+        this.emailService = emailService;
     }
 
     public String signUpSupremeAdmin(SupremeAdminRequest request) {
@@ -38,9 +41,22 @@ public class NAService {
                     .build();
             confirmationTokenRepo.save(token);
 
-            return "Supreme Admin signed up successfully";
+            // Send confirmation email
+            String subject = "Confirm Your Medical Portal Account";
+            String body = String.format(
+                    "Dear %s,\n\n" +
+                    "Welcome to the Medical Portal! To complete your registration, please use the following confirmation token:\n\n" +
+                    "TOKEN: %s\n\n" +
+                    "If you did not request this, please ignore this email.\n\n" +
+                    "Best regards,\n" +
+                    "Medical Portal Team",
+                    user.getName(), code);
+            
+            emailService.sendSimpleMessage(user.getEmail(), subject, body);
+
+            return "{\"success\":true,\"message\":\"Supreme Admin signed up successfully. Please check your email for the confirmation token.\"}";
         } catch (Exception e) {
-            return "Failed to sign up Supreme Admin";
+            return "{\"success\":false,\"message\":\"Failed to sign up Supreme Admin\"}";
         }
     }
 

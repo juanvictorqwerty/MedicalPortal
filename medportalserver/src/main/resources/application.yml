@@ -21,3 +21,15 @@ spring:
             name: admin
             password: 12345678
             roles: [ "ADMIN" ]
+
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: juanvictorqwerty@gmail.com
+        password: xxob syai satp ihyw
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
