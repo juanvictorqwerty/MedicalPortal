@@ -21,7 +21,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth -> {
                             auth.requestMatchers("/login", "/register_supreme_admin", "/sign-up-supreme-admin",
-                                    "/confirm-admin").permitAll();
+                                    "/resend-token", "/confirm-admin").permitAll();
                             auth.requestMatchers("/admin/**").hasRole("ADMIN");
                             auth.requestMatchers("/doctor/**").hasRole("DOCTOR");
                             auth.requestMatchers("/nurse/**").hasRole("NURSE");
