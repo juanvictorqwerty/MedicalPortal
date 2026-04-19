@@ -1,12 +1,13 @@
-package com.server.medportalserver.connection.national_admin.basic;
+package com.server.medportalserver.connection.creation.national_admin.basic;
 
 import org.springframework.stereotype.Service;
 import com.server.medportalserver.model.auth.User;
 import com.server.medportalserver.model.auth.ConfirmationToken;
 import java.time.LocalDateTime;
 import com.server.medportalserver.connection._common.GenerateRandomCode;
-import com.server.medportalserver.connection.national_admin.confirm.ConfirmationTokenRepo;
 import com.server.medportalserver.connection._common.email.EmailService;
+import com.server.medportalserver.connection.creation.national_admin.confirm.ConfirmationTokenRepo;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
@@ -17,7 +18,8 @@ public class NAService {
     private final GenerateRandomCode generateRandomCode;
     private final PasswordEncoder passwordEncoder;
 
-    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo, EmailService emailService, GenerateRandomCode generateRandomCode, PasswordEncoder passwordEncoder) {
+    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo, EmailService emailService,
+            GenerateRandomCode generateRandomCode, PasswordEncoder passwordEncoder) {
         this.naRepo = naRepo;
         this.confirmationTokenRepo = confirmationTokenRepo;
         this.emailService = emailService;
@@ -49,13 +51,14 @@ public class NAService {
             String subject = "Confirm Your Medical Portal Account";
             String body = String.format(
                     "Dear %s,\n\n" +
-                    "Welcome to the Medical Portal! To complete your registration, please use the following confirmation token:\n\n" +
-                    "TOKEN: %s\n\n" +
-                    "If you did not request this, please ignore this email.\n\n" +
-                    "Best regards,\n" +
-                    "Medical Portal Team",
+                            "Welcome to the Medical Portal! To complete your registration, please use the following confirmation token:\n\n"
+                            +
+                            "TOKEN: %s\n\n" +
+                            "If you did not request this, please ignore this email.\n\n" +
+                            "Best regards,\n" +
+                            "Medical Portal Team",
                     user.getName(), code);
-            
+
             emailService.sendSimpleMessage(user.getEmail(), subject, body);
 
             return "{\"success\":true,\"message\":\"Supreme Admin signed up successfully. Please check your email for the confirmation token.\"}";

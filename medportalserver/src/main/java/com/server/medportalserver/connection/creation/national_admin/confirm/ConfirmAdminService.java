@@ -1,9 +1,9 @@
-package com.server.medportalserver.connection.national_admin.confirm;
+package com.server.medportalserver.connection.creation.national_admin.confirm;
 
 import com.server.medportalserver.connection._common.GenerateRandomCode;
 import com.server.medportalserver.connection._common.email.EmailService;
-import com.server.medportalserver.connection.national_admin.basic.NARepo;
-import com.server.medportalserver.connection.national_admin.basic.RefreshedTokenRepo;
+import com.server.medportalserver.connection.creation.national_admin.basic.NARepo;
+import com.server.medportalserver.connection.creation.national_admin.basic.RefreshedTokenRepo;
 import com.server.medportalserver.model.auth.ConfirmationToken;
 import com.server.medportalserver.model.auth.RefreshedToken;
 import com.server.medportalserver.model.auth.User;
@@ -55,11 +55,12 @@ public class ConfirmAdminService {
             String subject = "New Confirmation Token - Medical Portal";
             String body = String.format(
                     "Dear %s,\n\n" +
-                    "You requested a new confirmation token. Please use the following token to complete your registration:\n\n" +
-                    "TOKEN: %s\n\n" +
-                    "This token is valid for 24 hours.\n\n" +
-                    "Best regards,\n" +
-                    "Medical Portal Team",
+                            "You requested a new confirmation token. Please use the following token to complete your registration:\n\n"
+                            +
+                            "TOKEN: %s\n\n" +
+                            "This token is valid for 24 hours.\n\n" +
+                            "Best regards,\n" +
+                            "Medical Portal Team",
                     user.getName(), code);
 
             emailService.sendSimpleMessage(user.getEmail(), subject, body);

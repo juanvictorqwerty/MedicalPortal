@@ -1,4 +1,4 @@
-package com.server.medportalserver.connection.national_admin.confirm;
+package com.server.medportalserver.connection.creation.national_admin.confirm;
 
 import com.server.medportalserver.model.auth.ConfirmationToken;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.server.medportalserver.connection.national_admin.basic;
+package com.server.medportalserver.connection.creation.national_admin.basic;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

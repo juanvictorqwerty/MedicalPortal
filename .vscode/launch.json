@@ -4,11 +4,11 @@
             "type": "java",
             "name": "Spring Boot-MedportalserverApplication<medportalserver>",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/medportalserver",
             "mainClass": "com.server.medportalserver.MedportalserverApplication",
             "projectName": "medportalserver",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/medportalserver/.env"
         }
     ]
 }
