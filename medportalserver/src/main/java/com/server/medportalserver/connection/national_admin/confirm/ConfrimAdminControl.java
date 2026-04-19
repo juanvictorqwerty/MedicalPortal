@@ -14,4 +14,9 @@ public class ConfrimAdminControl {
     public String confirmAdmin(@RequestBody ConfirmAdmin request) {
         return confirmAdminService.confirmAdmin(request);
     }
+
+    @PostMapping("/resend-token")
+    public String resendToken(@RequestBody ResendTokenRequest request) {
+        return confirmAdminService.resendToken(request);
+    }
 }

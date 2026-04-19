@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GenerateRandomCode {
 
     private final Random random = new Random();

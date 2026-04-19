@@ -13,11 +13,13 @@ public class NAService {
     private final NARepo naRepo;
     private final ConfirmationTokenRepo confirmationTokenRepo;
     private final EmailService emailService;
+    private final GenerateRandomCode generateRandomCode;
 
-    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo, EmailService emailService) {
+    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo, EmailService emailService, GenerateRandomCode generateRandomCode) {
         this.naRepo = naRepo;
         this.confirmationTokenRepo = confirmationTokenRepo;
         this.emailService = emailService;
+        this.generateRandomCode = generateRandomCode;
     }
 
     public String signUpSupremeAdmin(SupremeAdminRequest request) {
@@ -30,7 +32,6 @@ public class NAService {
 
         try {
             naRepo.save(user);
-            GenerateRandomCode generateRandomCode = new GenerateRandomCode();
             String code = generateRandomCode.generateAdminConfirmCode();
 
             ConfirmationToken token = ConfirmationToken.builder()
