@@ -6,8 +6,7 @@ import com.server.medportalserver.model.auth.ConfirmationToken;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.server.medportalserver.connection.GenerateRandomCode;
+import com.server.medportalserver.connection._common.GenerateRandomCode;
 import com.server.medportalserver.connection.national_admin.confirm.ConfirmationTokenRepo;
 
 @Service

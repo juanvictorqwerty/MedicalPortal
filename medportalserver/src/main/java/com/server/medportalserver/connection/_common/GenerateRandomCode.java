@@ -1,4 +1,4 @@
-package com.server.medportalserver.connection;
+package com.server.medportalserver.connection._common;
 
 import java.util.ArrayList;
 import java.util.Collections;
