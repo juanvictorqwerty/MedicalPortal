@@ -1,0 +1,9 @@
+{
+    "properties": [
+        {
+            "name": "registration.secret",
+            "type": "java.lang.String",
+            "description": "A description for 'registration.secret'"
+        }
+    ]
+}

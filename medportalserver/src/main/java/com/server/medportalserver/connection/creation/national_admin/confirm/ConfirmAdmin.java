@@ -1,4 +1,4 @@
-package com.server.medportalserver.connection.national_admin.confirm;
+package com.server.medportalserver.connection.creation.national_admin.confirm;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
