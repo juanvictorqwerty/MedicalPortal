@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import com.server.medportalserver.connection._common.GenerateRandomCode;
 import com.server.medportalserver.connection.national_admin.confirm.ConfirmationTokenRepo;
 import com.server.medportalserver.connection._common.email.EmailService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
 public class NAService {
@@ -14,12 +15,14 @@ public class NAService {
     private final ConfirmationTokenRepo confirmationTokenRepo;
     private final EmailService emailService;
     private final GenerateRandomCode generateRandomCode;
+    private final PasswordEncoder passwordEncoder;
 
-    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo, EmailService emailService, GenerateRandomCode generateRandomCode) {
+    public NAService(NARepo naRepo, ConfirmationTokenRepo confirmationTokenRepo, EmailService emailService, GenerateRandomCode generateRandomCode, PasswordEncoder passwordEncoder) {
         this.naRepo = naRepo;
         this.confirmationTokenRepo = confirmationTokenRepo;
         this.emailService = emailService;
         this.generateRandomCode = generateRandomCode;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public String signUpSupremeAdmin(SupremeAdminRequest request) {
@@ -27,7 +30,7 @@ public class NAService {
                 .email(request.getEmail())
                 .name(request.getName())
                 .phone(request.getPhone())
-                .password(request.getPassword())
+                .password(passwordEncoder.encode(request.getPassword()))
                 .build();
 
         try {
